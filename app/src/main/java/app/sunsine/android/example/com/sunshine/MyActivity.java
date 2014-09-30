@@ -114,6 +114,7 @@ public class MyActivity extends ActionBarActivity {
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
 
+                //test
                 // Read the input stream into a String
                 InputStream inputStream = urlConnection.getInputStream();
                 StringBuffer buffer = new StringBuffer();
