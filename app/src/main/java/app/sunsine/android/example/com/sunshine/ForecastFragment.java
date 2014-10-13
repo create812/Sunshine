@@ -29,6 +29,24 @@ import java.util.List;
  */
 public class ForecastFragment extends Fragment {
 
+
+
+    String returnedString = countTo(10);
+
+    public static String countTo(int Value){
+        String returningString = null;
+        int x = 0;
+
+        while(x < Value){
+            returningString = "" + x;
+            x++;
+
+        }
+        return returningString;
+    }
+
+
+
     public ForecastFragment() {
     }
 
