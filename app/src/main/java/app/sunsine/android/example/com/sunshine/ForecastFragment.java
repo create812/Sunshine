@@ -31,19 +31,19 @@ public class ForecastFragment extends Fragment {
 
 
 
-    String returnedString = countTo(10);
-
-    public static String countTo(int Value){
-        String returningString = null;
-        int x = 0;
-
-        while(x < Value){
-            returningString = "" + x;
-            x++;
-
-        }
-        return returningString;
-    }
+//    String returnedString = countTo(10);
+//
+//    public static String countTo(int Value){
+//        String returningString = null;
+//        int x = 0;
+//
+//        while(x < Value){
+//            returningString = "" + x;
+//            x++;
+//
+//        }
+//        return returningString;
+//    }
 
 
 
@@ -108,12 +108,42 @@ public class ForecastFragment extends Fragment {
         return rootView;
     }
 
-    public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
+    public static class FetchWeatherTask extends AsyncTask<String, Void, Void> {
 
         private final String LOG_TAG = FetchWeatherTask.class.getSimpleName();
 
+        public static String countTo(int Value){
+            String returningString = "";
+            int x = 0;
+
+            if(Value == 0) {
+                returningString = "0";
+                return returningString;
+            }
+            else if (Value > 0) {
+                while(x <= Value){
+                    returningString = returningString + " " + x;
+                    x++;
+                }
+                return returningString;
+            }
+            else if (Value < 0)
+            {
+                while(x >= Value){
+                    returningString = returningString + " " + x;
+                    x--;
+                }
+                return returningString;
+            }
+            return returningString;
+        }
+
+
         @Override
         protected Void doInBackground(String... params) {
+
+            String returnedString = countTo(-0);
+            Log.v(LOG_TAG, "countTo returned this: " + returnedString);
 
             //If there's no zip code, there's nothing to look up. Verify size of params.
             if (params.length == 0){
