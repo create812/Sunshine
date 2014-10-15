@@ -29,32 +29,23 @@ import java.util.List;
  */
 public class ForecastFragment extends Fragment {
 
-
-
-//    String returnedString = countTo(10);
-//
-//    public static String countTo(int Value){
-//        String returningString = null;
-//        int x = 0;
-//
-//        while(x < Value){
-//            returningString = "" + x;
-//            x++;
-//
-//        }
-//        return returningString;
-//    }
-
-
-
     public ForecastFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_my);
+
+        View myView = findViewById(R.id.my_view);
+        myView.setVisibility(View.INVISIBLE);
+
         // Add this line in order for this fragment to handle menu events
         setHasOptionsMenu(true);
+    }
+
+    private void setContentView(int activity_my) {
     }
 
     @Override
@@ -125,7 +116,7 @@ public class ForecastFragment extends Fragment {
                     returningString = returningString + " " + x;
                     x++;
                 }
-                return returningString;
+                return returningString.trim();
             }
             else if (Value < 0)
             {
@@ -133,7 +124,7 @@ public class ForecastFragment extends Fragment {
                     returningString = returningString + " " + x;
                     x--;
                 }
-                return returningString;
+                return returningString.trim();
             }
             return returningString;
         }
@@ -142,7 +133,7 @@ public class ForecastFragment extends Fragment {
         @Override
         protected Void doInBackground(String... params) {
 
-            String returnedString = countTo(-0);
+            String returnedString = countTo(-794);
             Log.v(LOG_TAG, "countTo returned this: " + returnedString);
 
             //If there's no zip code, there's nothing to look up. Verify size of params.
