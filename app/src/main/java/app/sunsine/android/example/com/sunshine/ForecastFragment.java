@@ -38,11 +38,21 @@ public class ForecastFragment extends Fragment {
 
         setContentView(R.layout.activity_my);
 
-        View myView = findViewById(R.id.my_view);
+        final View myView = findViewById(R.id.my_view);
+        myView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                myView.setVisibility(View.INVISIBLE);
+            }
+        }, 5000);
         myView.setVisibility(View.INVISIBLE);
 
         // Add this line in order for this fragment to handle menu events
         setHasOptionsMenu(true);
+    }
+
+    private View findViewById(Object my_view) {
+        return null;
     }
 
     private void setContentView(int activity_my) {
