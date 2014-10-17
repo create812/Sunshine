@@ -36,27 +36,27 @@ public class ForecastFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_my);
-
-        final View myView = findViewById(R.id.my_view);
-        myView.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                myView.setVisibility(View.INVISIBLE);
-            }
-        }, 5000);
-        myView.setVisibility(View.INVISIBLE);
+//        setContentView(R.layout.activity_my);
+//
+//        final View myView = findViewById(R.id.my_view);
+//        myView.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                myView.setVisibility(View.INVISIBLE);
+//            }
+//        }, 5000);
+//        myView.setVisibility(View.INVISIBLE);
 
         // Add this line in order for this fragment to handle menu events
         setHasOptionsMenu(true);
     }
 
-    private View findViewById(Object my_view) {
-        return null;
-    }
-
-    private void setContentView(int activity_my) {
-    }
+//    private View findViewById(Object my_view) {
+//        return null;
+//    }
+//
+//    private void setContentView(int activity_my) {
+//    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -113,38 +113,38 @@ public class ForecastFragment extends Fragment {
 
         private final String LOG_TAG = FetchWeatherTask.class.getSimpleName();
 
-        public static String countTo(int Value){
-            String returningString = "";
-            int x = 0;
-
-            if(Value == 0) {
-                returningString = "0";
-                return returningString;
-            }
-            else if (Value > 0) {
-                while(x <= Value){
-                    returningString = returningString + " " + x;
-                    x++;
-                }
-                return returningString.trim();
-            }
-            else if (Value < 0)
-            {
-                while(x >= Value){
-                    returningString = returningString + " " + x;
-                    x--;
-                }
-                return returningString.trim();
-            }
-            return returningString;
-        }
+//        public static String countTo(int Value){
+//            String returningString = "";
+//            int x = 0;
+//
+//            if(Value == 0) {
+//                returningString = "0";
+//                return returningString;
+//            }
+//            else if (Value > 0) {
+//                while(x <= Value){
+//                    returningString = returningString + " " + x;
+//                    x++;
+//                }
+//                return returningString.trim();
+//            }
+//            else if (Value < 0)
+//            {
+//                while(x >= Value){
+//                    returningString = returningString + " " + x;
+//                    x--;
+//                }
+//                return returningString.trim();
+//            }
+//            return returningString;
+//        }
 
 
         @Override
         protected Void doInBackground(String... params) {
 
-            String returnedString = countTo(-794);
-            Log.v(LOG_TAG, "countTo returned this: " + returnedString);
+//            String returnedString = countTo(-794);
+//            Log.v(LOG_TAG, "countTo returned this: " + returnedString);
 
             //If there's no zip code, there's nothing to look up. Verify size of params.
             if (params.length == 0){
