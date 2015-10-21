@@ -147,6 +147,7 @@ public class ForecastFragment extends Fragment {
 //            Log.v(LOG_TAG, "countTo returned this: " + returnedString);
 
             //If there's no zip code, there's nothing to look up. Verify size of params.
+            //Testing GitHub
             if (params.length == 0){
                 return null;
             }
